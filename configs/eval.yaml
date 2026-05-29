@@ -1,0 +1,114 @@
+base_config: configs/mvp.yaml
+output_dir: output
+dry_run: false
+keep_intermediates: false
+preserve_stage1_artifacts: true
+label_split: corpus
+stage1_field: shared_attributes
+
+dataset:
+  source: generated_targets
+  task_label_column: task_attribute
+
+semantic_support:
+  synonym_map_path: metadata/eval_synonyms.yaml
+  minimum_score: 0.7
+  stopwords:
+    - a
+    - an
+    - and
+    - at
+    - by
+    - for
+    - from
+    - in
+    - into
+    - near
+    - of
+    - on
+    - or
+    - the
+    - to
+    - with
+
+embeddings:
+  support_npz_template: output/eval_cache/support/{model}.npz
+  target_npz_template: output/eval_cache/targets/{model}.npz
+  reuse_base_manifest_embeddings_when_available: true
+  compute_support_if_missing: true
+  compute_target_if_missing: true
+
+llms:
+  - name: GPT-5.4
+    provider: openai
+    model: gpt-5.4
+    api_key_env: OPENAI_API_KEY
+    api_base: https://api.openai.com/v1/chat/completions
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 1400
+    temperature: 0.0
+  - name: GPT-4o-mini
+    provider: openai
+    model: gpt-4o-mini
+    api_key_env: OPENAI_API_KEY
+    api_base: https://api.openai.com/v1/chat/completions
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 1400
+    temperature: 0.0
+  - name: GPT-4.1
+    provider: openai
+    model: gpt-4.1
+    api_key_env: OPENAI_API_KEY
+    api_base: https://api.openai.com/v1/chat/completions
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 1400
+    temperature: 0.0
+  - name: GPT-5.4-mini
+    provider: openai
+    model: gpt-5.4-mini
+    api_key_env: OPENAI_API_KEY
+    api_base: https://api.openai.com/v1/chat/completions
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 1400
+    temperature: 0.0
+  - name: o3
+    provider: openai
+    model: o3
+    api_key_env: OPENAI_API_KEY
+    api_base: https://api.openai.com/v1/chat/completions
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 1400
+    temperature: 0.0
+
+
+rq1:
+  models:
+    - mobilenet_v3_small
+    - mobilenet_v3_large
+    - resnet50
+    - efficientnet_b0
+    - convnext_tiny
+    - vit_base_patch16_224
+  k: 7
+  llm: GPT-4o-mini
+
+rq2:
+  mode: split
+  model: resnet50
+  k_values: [3, 5, 10, 20]
+  reference_k: 7
+  reference_llm: GPT-4o-mini
+  llms:
+    - GPT-5.4
+    - GPT-4.1
+    - GPT-5.4-mini
+    - o3
+
+thresholds:
+  tau_excess_kl: 0.1
+  tau_ratio: 0.35

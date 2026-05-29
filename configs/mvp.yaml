@@ -1,0 +1,180 @@
+seed: 123
+
+dataset:
+  dataset_root: /home/bangjie/HARDEN/Representation-Screening/DCI/data/densely_captioned_images
+  complete_root: /home/bangjie/HARDEN/Representation-Screening/DCI/data/densely_captioned_images/complete
+  annotations_root: /home/bangjie/HARDEN/Representation-Screening/DCI/data/densely_captioned_images/annotations
+  photos_root: /home/bangjie/HARDEN/Representation-Screening/DCI/data/densely_captioned_images/photos
+  json_root_preference: auto
+  image_extensions: [".jpg", ".jpeg", ".png", ".webp"]
+
+paths:
+  manifest_csv: data/manifests/manifest.csv
+  embeddings_npz: data/caches/embeddings.npz
+  splits_csv: data/splits/splits.csv
+  index_npz: data/indices/corpus_index.npz
+  stage1_jsonl: data/reports/stage1_discovery.jsonl
+  labels_csv: data/labels/secret_labels.csv
+  confirmation_summary_csv: data/reports/confirmation_summary.csv
+  target_confirmations_csv: data/reports/target_confirmations.csv
+  task_outputs_csv: data/caches/task_outputs.csv
+  target_report_dir: data/reports/target_reports
+  target_report_md: data/reports/target_reports.md
+  overall_report_md: data/reports/overall_report.md
+
+report:
+  markdown_image_root: /home/bangjie/HARDEN/Representation-Screening/DCI/data/densely_captioned_images/photos
+
+generated_targets:
+  manifest_csv: ../Dataset-Generation/sdxl_eval_set2_four_roles/prompt_manifest.csv
+  image_root: /home/bangjie/HARDEN/Representation-Screening/Dataset-Generation/sdxl_eval_set2_four_roles
+
+manifest:
+  max_mask_captions: 8
+  min_mask_quality: 0.0
+
+embeddings:
+  # Supported model_name values:
+  # mobilenet_v3_small
+  # mobilenet_v3_large
+  # mobilenet_v3_small_quantized
+  # mobilenet_v3_large_quantized
+  # resnet50
+  # efficientnet_b0
+  # vit_base_patch16_224
+  # convnext_tiny
+  model_name: resnet50
+  batch_size: 32
+  num_workers: 4
+  image_size: 224
+  device: auto
+  save_logits: false
+  save_pred_labels: true
+  logits_dtype: float16
+
+splits:
+  corpus: 1.00
+  audited: 0.00
+
+audit:
+  target_split: audited
+
+retrieval:
+  top_k: 10
+  similarity_metric: cosine
+  auditability:
+    max_distance_quantile: 0.75
+    min_tag_concentration: 0.15
+    min_jaccard_stability: 0.30
+
+probe:
+  target_split: audited
+  models: ["logreg", "mlp"]
+  mlp_hidden_dim: 256
+  mlp_max_iter: 100
+  min_labeled_examples: 80
+  calibration_bins: 10
+  use_crossfit: true
+  crossfit_folds: 5
+  test_size_within_target_split: 0.30
+
+discovery:
+  target_split: audited
+  mode: llm
+  llm:
+    model: gpt-4o-mini
+    api_base: https://api.openai.com/v1
+    api_key_env: OPENAI_API_KEY
+    timeout_sec: 180
+    max_retries: 3
+    max_output_tokens: 700
+    only_auditable: true
+    fallback_to_heuristic_on_error: true
+    max_neighbor_texts: 8
+    max_chars_per_text: 600
+    max_attributes: 10
+    max_task_relevance: 0.75
+    min_specificity: 0.2
+    min_relevance: 0.2
+    generic_blacklist:
+      - image
+      - images
+      - photo
+      - photos
+      - picture
+      - pictures
+      - photograph
+      - photographs
+      - depiction
+      - depictions
+  offline_llm:
+    only_auditable: true
+    max_neighbor_texts: 8
+    max_chars_per_text: 600
+    max_attributes: 10
+    max_excess_secrets: 10
+    max_task_relevance: 0.75
+    min_specificity: 0.20
+    min_relevance: 0.20
+    min_privacy_relevance: 0.00
+    generic_blacklist:
+      - image
+      - images
+      - photo
+      - photos
+      - picture
+      - pictures
+      - photograph
+      - photographs
+      - depiction
+      - depictions
+
+schema_generation:
+  mode: llm
+  prefer_llm_attributes: true
+  min_support_targets: 5
+  max_secrets: 10
+  max_patterns_per_secret: 6
+  min_phrase_chars: 3
+  min_specificity: 0.20
+  min_relevance: 0.2
+  fallback_to_heuristic_on_error: true
+  summary_path: data/reports/operationalization_summary.md
+
+operationalization:
+  source: stage1
+  stage1_path: data/reports/stage1_discovery.jsonl
+  from_stage1_field: shared_attributes
+  from_stage1_mode: per_target
+  label_on_full_manifest: true
+  collapse_identical_label_signatures: false
+  max_task_relevance: 0.75
+  min_specificity: 0.20
+  min_privacy_relevance: 0.00
+  min_support: 1
+  text_column: text_base
+  id_column: image_id
+  target_id_column: image_id
+
+confirmation:
+  target_split: audited
+  top_k_support: 25
+  temperature: 0.10
+  beta_alpha: 1.0
+  include_debug_metrics: false
+  exclude_self: true
+  min_labeled_examples: 5
+  min_external_support: 1
+  max_top_support_to_store: 5
+  baseline_mode: Y
+  min_posterior_shift: 0.02
+  min_excess_lift: 1.10
+  min_excess_kl: 0.01
+  min_neighbor_support: 3
+  min_effective_sample_size: 3.0
+  min_baseline_effective_sample_size: 1.0
+  min_attribute_specificity: 0.20
+  require_task_baseline: true
+
+task_labels:
+  class_name_json: metadata/imagenet-simple-labels.json
