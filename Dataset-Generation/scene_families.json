@@ -1,0 +1,762 @@
+{
+  "medical": {
+    "label": "Human-centric medical",
+    "description": "human-centric medical care imagery",
+    "primary": [
+      {
+        "key": "doctor_female_midshot",
+        "label": "doctor",
+        "semantic_type": "adult person",
+        "attributes": ["female-presenting", "mid-shot", "white coat", "confident stance"],
+        "description": "an adult doctor, female-presenting, mid-shot, wearing a white coat",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "doctor_male_consulting",
+        "label": "doctor",
+        "semantic_type": "adult person",
+        "attributes": ["male-presenting", "three-quarter view", "consulting posture", "stethoscope"],
+        "description": "an adult doctor, male-presenting, in a consulting posture with a stethoscope",
+        "allowed_backgrounds": ["er_ward", "clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "nurse_scrubs_standing",
+        "label": "nurse",
+        "semantic_type": "adult person",
+        "attributes": ["standing", "hospital scrubs", "attentive expression", "upper-body framing"],
+        "description": "an adult nurse in hospital scrubs, standing attentively in upper-body framing",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "surgeon_scrub_cap",
+        "label": "surgeon",
+        "semantic_type": "adult person",
+        "attributes": ["scrub cap", "mask lowered", "upper-body shot", "focused posture"],
+        "description": "an adult surgeon with a scrub cap, mask lowered, shown in an upper-body shot",
+        "allowed_backgrounds": ["operating_theater", "icu_bay"],
+        "scene_tags": ["medical"]
+      }
+    ],
+    "secondary": [
+      {
+        "key": "patient_hospital_bed",
+        "label": "patient on bed",
+        "semantic_type": "adult person",
+        "attributes": ["lying on bed", "covered by blanket", "calm posture"],
+        "description": "a patient lying on a hospital bed under a blanket",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "operating_theater"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "seated_patient_exam_chair",
+        "label": "patient in exam chair",
+        "semantic_type": "adult person",
+        "attributes": ["seated", "exam chair", "consultation pose"],
+        "description": "a patient seated in an exam chair during a consultation",
+        "allowed_backgrounds": ["clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "bedside_monitor",
+        "label": "bedside monitor",
+        "semantic_type": "medical device",
+        "attributes": ["vital signs screen", "clinical casing", "midground placement"],
+        "description": "a bedside monitor showing vital signs",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "clinic_room", "operating_theater"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "ultrasound_cart",
+        "label": "ultrasound cart",
+        "semantic_type": "medical device",
+        "attributes": ["rolling cart", "display screen", "exam-room equipment"],
+        "description": "an ultrasound cart with a visible display screen",
+        "allowed_backgrounds": ["clinic_room", "er_ward"],
+        "scene_tags": ["medical"]
+      }
+    ],
+    "ternary": [
+      {
+        "key": "iv_drip_bag",
+        "label": "IV drip bag",
+        "semantic_type": "medical accessory",
+        "attributes": ["transparent bag", "hanging from stand", "diagnostic cue"],
+        "description": "a small IV drip bag hanging from a stand",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "operating_theater"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "stethoscope_close",
+        "label": "stethoscope",
+        "semantic_type": "medical accessory",
+        "attributes": ["coiled tubing", "metal chest piece", "recognizable silhouette"],
+        "description": "a small but recognizable stethoscope",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "hospital_logo_monitor",
+        "label": "hospital logo",
+        "semantic_type": "visual symbol",
+        "attributes": ["small hospital logo", "displayed on monitor bezel", "subtle branding"],
+        "description": "a small hospital logo visible on a nearby monitor",
+        "allowed_backgrounds": ["er_ward", "icu_bay", "clinic_room"],
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "syringe_tray",
+        "label": "syringe tray",
+        "semantic_type": "medical accessory",
+        "attributes": ["metal tray", "single syringe", "clean procedural setup"],
+        "description": "a small syringe placed on a metal tray",
+        "allowed_backgrounds": ["clinic_room", "operating_theater"],
+        "scene_tags": ["medical"]
+      }
+    ],
+    "background": [
+      {
+        "key": "er_ward",
+        "label": "ER ward",
+        "semantic_type": "clinical environment",
+        "attributes": ["busy emergency room", "multiple beds", "clinical lighting"],
+        "description": "a busy emergency room ward with multiple beds and bright clinical lighting",
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "icu_bay",
+        "label": "ICU bay",
+        "semantic_type": "clinical environment",
+        "attributes": ["intensive care bay", "medical equipment", "sterile atmosphere"],
+        "description": "an intensive care unit bay with visible medical equipment",
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "clinic_room",
+        "label": "clinic room",
+        "semantic_type": "clinical environment",
+        "attributes": ["consultation room", "exam furniture", "organized surfaces"],
+        "description": "a modern clinic consultation room with exam furniture",
+        "scene_tags": ["medical"]
+      },
+      {
+        "key": "operating_theater",
+        "label": "operating theater",
+        "semantic_type": "clinical environment",
+        "attributes": ["surgical lighting", "sterile room", "medical instruments"],
+        "description": "a clean operating theater with surgical lighting",
+        "scene_tags": ["medical"]
+      }
+    ]
+  },
+  "religious": {
+    "label": "Human-centric religious",
+    "description": "human-centric religious interior imagery",
+    "primary": [
+      {
+        "key": "worshipper_contemplative",
+        "label": "worshipper",
+        "semantic_type": "adult person",
+        "attributes": ["contemplative stance", "modest clothing", "mid-shot"],
+        "description": "an adult worshipper in modest clothing, shown in a contemplative mid-shot",
+        "allowed_backgrounds": ["church_interior", "temple_hall", "mosque_prayer_room", "shrine_courtyard"],
+        "scene_tags": ["christian", "buddhist", "islamic", "generic_religious"]
+      },
+      {
+        "key": "christian_priest",
+        "label": "religious leader",
+        "semantic_type": "adult person",
+        "attributes": ["priest", "ceremonial robe", "upright posture"],
+        "description": "an adult Christian priest wearing ceremonial robes",
+        "allowed_backgrounds": ["church_interior"],
+        "scene_tags": ["christian", "generic_religious"]
+      },
+      {
+        "key": "buddhist_monk",
+        "label": "religious leader",
+        "semantic_type": "adult person",
+        "attributes": ["monk", "saffron robe", "calm expression"],
+        "description": "an adult Buddhist monk wearing a saffron robe",
+        "allowed_backgrounds": ["temple_hall", "shrine_courtyard"],
+        "scene_tags": ["buddhist", "generic_religious"]
+      },
+      {
+        "key": "muslim_imam",
+        "label": "religious leader",
+        "semantic_type": "adult person",
+        "attributes": ["imam", "traditional robe", "prayerful posture"],
+        "description": "an adult imam in traditional robes, posed in a prayerful stance",
+        "allowed_backgrounds": ["mosque_prayer_room"],
+        "scene_tags": ["islamic", "generic_religious"]
+      }
+    ],
+    "secondary": [
+      {
+        "key": "altar_table",
+        "label": "altar",
+        "semantic_type": "religious furnishing",
+        "attributes": ["ornamental table", "lit candles", "front sanctuary element"],
+        "description": "a decorated altar table with lit candles",
+        "allowed_backgrounds": ["church_interior"],
+        "scene_tags": ["christian", "generic_religious"]
+      },
+      {
+        "key": "scripture_stand",
+        "label": "scripture stand",
+        "semantic_type": "religious furnishing",
+        "attributes": ["open scripture", "raised stand", "ceremonial placement"],
+        "description": "an open scripture resting on a raised stand",
+        "allowed_backgrounds": ["church_interior", "temple_hall", "mosque_prayer_room"],
+        "scene_tags": ["christian", "buddhist", "islamic", "generic_religious"]
+      },
+      {
+        "key": "devotional_statue",
+        "label": "devotional statue",
+        "semantic_type": "religious object",
+        "attributes": ["stone or carved figure", "side placement", "reverent context"],
+        "description": "a devotional statue placed to one side of the scene",
+        "allowed_backgrounds": ["church_interior", "temple_hall", "shrine_courtyard"],
+        "scene_tags": ["christian", "buddhist", "generic_religious"]
+      },
+      {
+        "key": "prayer_rug_niche",
+        "label": "prayer rug area",
+        "semantic_type": "religious furnishing",
+        "attributes": ["prayer rug", "oriented niche", "clean floor space"],
+        "description": "a prayer rug placed near a prayer niche",
+        "allowed_backgrounds": ["mosque_prayer_room"],
+        "scene_tags": ["islamic", "generic_religious"]
+      }
+    ],
+    "ternary": [
+      {
+        "key": "small_cross",
+        "label": "cross",
+        "semantic_type": "religious symbol",
+        "attributes": ["small cross", "hanging or tabletop", "recognizable silhouette"],
+        "description": "a small Christian cross",
+        "allowed_backgrounds": ["church_interior"],
+        "scene_tags": ["christian", "generic_religious"]
+      },
+      {
+        "key": "rosary_beads",
+        "label": "rosary",
+        "semantic_type": "religious symbol",
+        "attributes": ["rosary beads", "small handheld object", "looped chain"],
+        "description": "a small set of rosary beads",
+        "allowed_backgrounds": ["church_interior"],
+        "scene_tags": ["christian", "generic_religious"]
+      },
+      {
+        "key": "incense_burner",
+        "label": "incense burner",
+        "semantic_type": "religious object",
+        "attributes": ["small burner", "ornamental metalwork", "ritual cue"],
+        "description": "a small incense burner used as a ritual cue",
+        "allowed_backgrounds": ["temple_hall", "shrine_courtyard"],
+        "scene_tags": ["buddhist", "generic_religious"]
+      },
+      {
+        "key": "prayer_beads",
+        "label": "prayer beads",
+        "semantic_type": "religious symbol",
+        "attributes": ["small beads", "looped strand", "recognizable devotional item"],
+        "description": "a small strand of prayer beads",
+        "allowed_backgrounds": ["mosque_prayer_room", "temple_hall", "shrine_courtyard"],
+        "scene_tags": ["islamic", "buddhist", "generic_religious"]
+      }
+    ],
+    "background": [
+      {
+        "key": "church_interior",
+        "label": "church interior",
+        "semantic_type": "religious interior",
+        "attributes": ["pews", "arched ceiling", "warm interior light"],
+        "description": "a church interior with pews and an arched ceiling",
+        "scene_tags": ["christian", "generic_religious"]
+      },
+      {
+        "key": "temple_hall",
+        "label": "temple hall",
+        "semantic_type": "religious interior",
+        "attributes": ["ornate hall", "lanterns", "decorated shrine space"],
+        "description": "a temple hall with ornate architecture and lanterns",
+        "scene_tags": ["buddhist", "generic_religious"]
+      },
+      {
+        "key": "mosque_prayer_room",
+        "label": "mosque prayer room",
+        "semantic_type": "religious interior",
+        "attributes": ["prayer carpets", "arched niche", "soft daylight"],
+        "description": "a mosque prayer room with carpets and an arched niche",
+        "scene_tags": ["islamic", "generic_religious"]
+      },
+      {
+        "key": "shrine_courtyard",
+        "label": "shrine courtyard",
+        "semantic_type": "religious exterior",
+        "attributes": ["stone courtyard", "ceremonial details", "quiet atmosphere"],
+        "description": "a shrine courtyard with stone paving and ceremonial details",
+        "scene_tags": ["buddhist", "generic_religious"]
+      }
+    ]
+  },
+  "policing_protest": {
+    "label": "Human-centric policing / protest",
+    "description": "human-centric policing or civic protest imagery without graphic violence",
+    "primary": [
+      {
+        "key": "police_officer_uniform",
+        "label": "police officer",
+        "semantic_type": "adult person",
+        "attributes": ["uniformed", "standing posture", "foreground presence"],
+        "description": "an adult police officer in uniform",
+        "allowed_backgrounds": ["street_protest", "checkpoint", "urban_square", "transit_hub"],
+        "scene_tags": ["policing", "security", "civic"]
+      },
+      {
+        "key": "security_guard_vest",
+        "label": "security guard",
+        "semantic_type": "adult person",
+        "attributes": ["high-visibility vest", "alert posture", "mid-shot"],
+        "description": "an adult security guard wearing a high-visibility vest",
+        "allowed_backgrounds": ["checkpoint", "urban_square", "transit_hub"],
+        "scene_tags": ["security", "civic"]
+      },
+      {
+        "key": "peaceful_protester",
+        "label": "protester",
+        "semantic_type": "adult person",
+        "attributes": ["casual clothing", "peaceful stance", "determined expression"],
+        "description": "an adult protester in a peaceful stance",
+        "allowed_backgrounds": ["street_protest", "urban_square"],
+        "scene_tags": ["protest", "civic"]
+      },
+      {
+        "key": "community_marshal",
+        "label": "community marshal",
+        "semantic_type": "adult person",
+        "attributes": ["armband", "coordinating posture", "calm expression"],
+        "description": "an adult community marshal coordinating the scene calmly",
+        "allowed_backgrounds": ["street_protest", "urban_square", "transit_hub"],
+        "scene_tags": ["civic", "protest", "security"]
+      }
+    ],
+    "secondary": [
+      {
+        "key": "civilian_onlooker",
+        "label": "civilian",
+        "semantic_type": "adult person",
+        "attributes": ["side-on stance", "observing quietly", "midground placement"],
+        "description": "a civilian onlooker standing quietly in the midground",
+        "allowed_backgrounds": ["street_protest", "urban_square", "transit_hub"],
+        "scene_tags": ["civic", "protest", "security"]
+      },
+      {
+        "key": "police_car",
+        "label": "police car",
+        "semantic_type": "vehicle",
+        "attributes": ["parked", "recognizable livery", "street-side placement"],
+        "description": "a parked police car with recognizable livery",
+        "allowed_backgrounds": ["street_protest", "checkpoint", "urban_square"],
+        "scene_tags": ["policing", "security", "civic"]
+      },
+      {
+        "key": "metal_barricade",
+        "label": "barricade",
+        "semantic_type": "street control object",
+        "attributes": ["metal barrier", "crowd-control cue", "side placement"],
+        "description": "a metal barricade used for crowd control",
+        "allowed_backgrounds": ["street_protest", "checkpoint", "urban_square"],
+        "scene_tags": ["policing", "security", "protest", "civic"]
+      },
+      {
+        "key": "checkpoint_booth",
+        "label": "checkpoint booth",
+        "semantic_type": "security structure",
+        "attributes": ["small booth", "inspection area", "controlled access cue"],
+        "description": "a checkpoint booth marking a controlled access area",
+        "allowed_backgrounds": ["checkpoint", "transit_hub"],
+        "scene_tags": ["security", "policing", "civic"]
+      }
+    ],
+    "ternary": [
+      {
+        "key": "uniform_badge",
+        "label": "badge",
+        "semantic_type": "official symbol",
+        "attributes": ["small badge", "metallic detail", "uniform attachment"],
+        "description": "a small official badge",
+        "allowed_backgrounds": ["street_protest", "checkpoint", "urban_square", "transit_hub"],
+        "scene_tags": ["policing", "security", "civic"]
+      },
+      {
+        "key": "handheld_megaphone",
+        "label": "megaphone",
+        "semantic_type": "communication device",
+        "attributes": ["small handheld megaphone", "public-address cue", "recognizable silhouette"],
+        "description": "a small handheld megaphone",
+        "allowed_backgrounds": ["street_protest", "urban_square", "checkpoint"],
+        "scene_tags": ["protest", "policing", "civic"]
+      },
+      {
+        "key": "small_protest_sign",
+        "label": "small sign",
+        "semantic_type": "civic symbol",
+        "attributes": ["compact sign", "peaceful message", "poster board"],
+        "description": "a small peaceful protest sign",
+        "allowed_backgrounds": ["street_protest", "urban_square"],
+        "scene_tags": ["protest", "civic"]
+      },
+      {
+        "key": "checkpoint_pass",
+        "label": "checkpoint pass",
+        "semantic_type": "security symbol",
+        "attributes": ["laminated pass", "lanyard", "small access credential"],
+        "description": "a small access pass on a lanyard",
+        "allowed_backgrounds": ["checkpoint", "transit_hub"],
+        "scene_tags": ["security", "civic"]
+      }
+    ],
+    "background": [
+      {
+        "key": "street_protest",
+        "label": "street protest",
+        "semantic_type": "urban civic setting",
+        "attributes": ["peaceful crowd", "city street", "banners in the distance"],
+        "description": "a peaceful street protest along a city street",
+        "scene_tags": ["protest", "civic"]
+      },
+      {
+        "key": "checkpoint",
+        "label": "checkpoint",
+        "semantic_type": "security setting",
+        "attributes": ["controlled access lane", "barriers", "inspection zone"],
+        "description": "a checkpoint with barriers and a controlled access lane",
+        "scene_tags": ["security", "policing", "civic"]
+      },
+      {
+        "key": "urban_square",
+        "label": "urban square",
+        "semantic_type": "public space",
+        "attributes": ["open plaza", "surrounding buildings", "civic atmosphere"],
+        "description": "an urban square surrounded by civic buildings",
+        "scene_tags": ["civic", "protest", "policing", "security"]
+      },
+      {
+        "key": "transit_hub",
+        "label": "transit hub",
+        "semantic_type": "public infrastructure setting",
+        "attributes": ["station entrance", "pedestrian flow", "security presence"],
+        "description": "a busy transit hub with visible station access points",
+        "scene_tags": ["security", "civic"]
+      }
+    ]
+  },
+  "urban_infrastructure": {
+    "label": "Urban / infrastructure",
+    "description": "urban and infrastructure imagery with large built structures",
+    "primary": [
+      {
+        "key": "glass_skyscraper",
+        "label": "skyscraper",
+        "semantic_type": "large building",
+        "attributes": ["glass facade", "towering height", "architectural focal point"],
+        "description": "a large glass skyscraper rising prominently upward",
+        "allowed_backgrounds": ["dense_urban_skyline", "highway_interchange", "industrial_site", "riverfront_city"],
+        "scene_tags": ["urban", "infrastructure", "transport"]
+      },
+      {
+        "key": "suspension_bridge",
+        "label": "bridge",
+        "semantic_type": "major structure",
+        "attributes": ["suspension cables", "expansive span", "dominant silhouette"],
+        "description": "a large suspension bridge with sweeping cables",
+        "allowed_backgrounds": ["dense_urban_skyline", "highway_interchange", "riverfront_city"],
+        "scene_tags": ["urban", "infrastructure", "transport"]
+      },
+      {
+        "key": "grand_train_terminal",
+        "label": "train terminal",
+        "semantic_type": "major structure",
+        "attributes": ["historic facade", "arched entrance", "transport landmark"],
+        "description": "a grand train terminal with an arched facade",
+        "allowed_backgrounds": ["dense_urban_skyline", "riverfront_city"],
+        "scene_tags": ["urban", "transport", "infrastructure"]
+      },
+      {
+        "key": "industrial_tower",
+        "label": "industrial tower",
+        "semantic_type": "major structure",
+        "attributes": ["metal framework", "industrial scale", "vertical form"],
+        "description": "a tall industrial tower with visible metal framework",
+        "allowed_backgrounds": ["industrial_site", "highway_interchange"],
+        "scene_tags": ["infrastructure", "industrial"]
+      }
+    ],
+    "secondary": [
+      {
+        "key": "city_bus",
+        "label": "bus",
+        "semantic_type": "vehicle",
+        "attributes": ["modern city bus", "midground lane", "recognizable shape"],
+        "description": "a modern city bus in the midground",
+        "allowed_backgrounds": ["dense_urban_skyline", "highway_interchange", "riverfront_city"],
+        "scene_tags": ["urban", "transport", "infrastructure"]
+      },
+      {
+        "key": "commuter_train",
+        "label": "train",
+        "semantic_type": "vehicle",
+        "attributes": ["commuter train", "side profile", "track-adjacent placement"],
+        "description": "a commuter train visible beside the main structure",
+        "allowed_backgrounds": ["dense_urban_skyline", "riverfront_city"],
+        "scene_tags": ["transport", "urban", "infrastructure"]
+      },
+      {
+        "key": "tower_crane",
+        "label": "crane",
+        "semantic_type": "construction equipment",
+        "attributes": ["tower crane", "construction cue", "smaller scale than primary"],
+        "description": "a tower crane positioned beside the main structure",
+        "allowed_backgrounds": ["dense_urban_skyline", "industrial_site", "highway_interchange"],
+        "scene_tags": ["urban", "industrial", "infrastructure"]
+      },
+      {
+        "key": "service_tower",
+        "label": "tower",
+        "semantic_type": "support structure",
+        "attributes": ["service tower", "auxiliary structure", "side placement"],
+        "description": "a smaller service tower adjacent to the primary structure",
+        "allowed_backgrounds": ["industrial_site", "highway_interchange", "riverfront_city"],
+        "scene_tags": ["infrastructure", "industrial", "transport"]
+      }
+    ],
+    "ternary": [
+      {
+        "key": "road_sign",
+        "label": "road sign",
+        "semantic_type": "urban cue",
+        "attributes": ["small directional sign", "legible shape", "street-side detail"],
+        "description": "a small directional road sign",
+        "allowed_backgrounds": ["dense_urban_skyline", "highway_interchange", "riverfront_city", "industrial_site"],
+        "scene_tags": ["urban", "transport", "infrastructure", "industrial"]
+      },
+      {
+        "key": "traffic_light",
+        "label": "traffic light",
+        "semantic_type": "urban cue",
+        "attributes": ["small traffic signal", "pole-mounted", "recognizable lights"],
+        "description": "a small traffic light on a pole",
+        "allowed_backgrounds": ["dense_urban_skyline", "highway_interchange", "riverfront_city"],
+        "scene_tags": ["urban", "transport", "infrastructure"]
+      },
+      {
+        "key": "building_logo",
+        "label": "building logo",
+        "semantic_type": "visual symbol",
+        "attributes": ["small corporate mark", "mounted on facade", "subtle branding"],
+        "description": "a small logo mounted on a nearby building facade",
+        "allowed_backgrounds": ["dense_urban_skyline", "industrial_site", "riverfront_city"],
+        "scene_tags": ["urban", "industrial", "infrastructure"]
+      },
+      {
+        "key": "utility_box",
+        "label": "utility box",
+        "semantic_type": "infrastructure cue",
+        "attributes": ["small utility cabinet", "street hardware", "foreground detail"],
+        "description": "a small utility box near the curb",
+        "allowed_backgrounds": ["highway_interchange", "industrial_site", "dense_urban_skyline"],
+        "scene_tags": ["infrastructure", "industrial", "urban"]
+      }
+    ],
+    "background": [
+      {
+        "key": "dense_urban_skyline",
+        "label": "dense urban skyline",
+        "semantic_type": "urban background",
+        "attributes": ["clustered towers", "city atmosphere", "layered depth"],
+        "description": "a dense urban skyline with layered towers",
+        "scene_tags": ["urban", "transport", "infrastructure"]
+      },
+      {
+        "key": "highway_interchange",
+        "label": "highway interchange",
+        "semantic_type": "transport background",
+        "attributes": ["elevated roads", "concrete ramps", "traffic infrastructure"],
+        "description": "a highway interchange with elevated ramps",
+        "scene_tags": ["transport", "infrastructure", "industrial"]
+      },
+      {
+        "key": "industrial_site",
+        "label": "industrial site",
+        "semantic_type": "industrial background",
+        "attributes": ["factory structures", "pipes", "worksite atmosphere"],
+        "description": "an industrial site with large factory structures",
+        "scene_tags": ["industrial", "infrastructure"]
+      },
+      {
+        "key": "riverfront_city",
+        "label": "riverfront city",
+        "semantic_type": "urban background",
+        "attributes": ["waterfront edge", "city buildings", "open sightline"],
+        "description": "a riverfront city scene with buildings along the water",
+        "scene_tags": ["urban", "transport", "infrastructure"]
+      }
+    ]
+  },
+  "commercial_socioeconomic": {
+    "label": "Commercial / socioeconomic",
+    "description": "commercial and socioeconomic retail imagery",
+    "primary": [
+      {
+        "key": "shopper_bags",
+        "label": "shopper",
+        "semantic_type": "adult person",
+        "attributes": ["shopping bags", "foreground presence", "streetwear"],
+        "description": "an adult shopper carrying shopping bags",
+        "allowed_backgrounds": ["supermarket", "luxury_boutique", "street_market", "electronics_store"],
+        "scene_tags": ["retail", "luxury", "market", "value", "tech"]
+      },
+      {
+        "key": "retail_employee_apron",
+        "label": "employee",
+        "semantic_type": "adult person",
+        "attributes": ["store apron", "professional posture", "customer-facing role"],
+        "description": "a retail employee wearing a store apron",
+        "allowed_backgrounds": ["supermarket", "street_market", "electronics_store"],
+        "scene_tags": ["retail", "market", "value", "tech"]
+      },
+      {
+        "key": "street_vendor",
+        "label": "vendor",
+        "semantic_type": "adult person",
+        "attributes": ["market stall owner", "standing pose", "casual workwear"],
+        "description": "a street vendor standing at a market stall",
+        "allowed_backgrounds": ["street_market"],
+        "scene_tags": ["market", "value"]
+      },
+      {
+        "key": "luxury_store_clerk",
+        "label": "employee",
+        "semantic_type": "adult person",
+        "attributes": ["tailored uniform", "formal posture", "boutique setting"],
+        "description": "a luxury boutique clerk in tailored attire",
+        "allowed_backgrounds": ["luxury_boutique"],
+        "scene_tags": ["retail", "luxury"]
+      }
+    ],
+    "secondary": [
+      {
+        "key": "shopping_cart",
+        "label": "shopping cart",
+        "semantic_type": "retail object",
+        "attributes": ["metal cart", "product-filled", "midground placement"],
+        "description": "a shopping cart with visible products",
+        "allowed_backgrounds": ["supermarket", "street_market"],
+        "scene_tags": ["retail", "market", "value"]
+      },
+      {
+        "key": "product_display",
+        "label": "product display",
+        "semantic_type": "retail fixture",
+        "attributes": ["stacked products", "merchandising layout", "side placement"],
+        "description": "a curated product display beside the subject",
+        "allowed_backgrounds": ["supermarket", "luxury_boutique", "electronics_store"],
+        "scene_tags": ["retail", "luxury", "value", "tech"]
+      },
+      {
+        "key": "parked_car",
+        "label": "car",
+        "semantic_type": "vehicle",
+        "attributes": ["parked nearby", "consumer context", "side profile"],
+        "description": "a parked car near the storefront",
+        "allowed_backgrounds": ["street_market", "luxury_boutique"],
+        "scene_tags": ["luxury", "market", "value"]
+      },
+      {
+        "key": "checkout_counter",
+        "label": "checkout counter",
+        "semantic_type": "retail fixture",
+        "attributes": ["counter surface", "point-of-sale area", "register equipment"],
+        "description": "a checkout counter with point-of-sale equipment",
+        "allowed_backgrounds": ["supermarket", "electronics_store", "luxury_boutique"],
+        "scene_tags": ["retail", "value", "tech", "luxury"]
+      }
+    ],
+    "ternary": [
+      {
+        "key": "brand_logo_small",
+        "label": "brand logo",
+        "semantic_type": "commercial symbol",
+        "attributes": ["small brand logo", "subtle signage", "recognizable mark"],
+        "description": "a small brand logo on nearby signage",
+        "allowed_backgrounds": ["luxury_boutique", "electronics_store", "supermarket"],
+        "scene_tags": ["retail", "luxury", "tech", "value"]
+      },
+      {
+        "key": "price_tag",
+        "label": "price tag",
+        "semantic_type": "commercial symbol",
+        "attributes": ["small price tag", "hanging label", "clear product cue"],
+        "description": "a small price tag attached to merchandise",
+        "allowed_backgrounds": ["supermarket", "street_market", "luxury_boutique", "electronics_store"],
+        "scene_tags": ["retail", "luxury", "market", "value", "tech"]
+      },
+      {
+        "key": "sale_sign",
+        "label": "sale sign",
+        "semantic_type": "commercial symbol",
+        "attributes": ["compact sale sign", "promotional cue", "paper signage"],
+        "description": "a small sale sign near the products",
+        "allowed_backgrounds": ["supermarket", "street_market"],
+        "scene_tags": ["retail", "market", "value"]
+      },
+      {
+        "key": "receipt_slip",
+        "label": "receipt",
+        "semantic_type": "commercial cue",
+        "attributes": ["small printed receipt", "checkout detail", "paper slip"],
+        "description": "a small printed receipt slip",
+        "allowed_backgrounds": ["supermarket", "electronics_store", "luxury_boutique"],
+        "scene_tags": ["retail", "luxury", "tech", "value"]
+      }
+    ],
+    "background": [
+      {
+        "key": "supermarket",
+        "label": "supermarket",
+        "semantic_type": "commercial interior",
+        "attributes": ["grocery aisles", "bright retail lights", "stacked products"],
+        "description": "a supermarket interior with grocery aisles and bright lights",
+        "scene_tags": ["retail", "value"]
+      },
+      {
+        "key": "luxury_boutique",
+        "label": "luxury boutique",
+        "semantic_type": "commercial interior",
+        "attributes": ["polished displays", "premium finishes", "exclusive atmosphere"],
+        "description": "a luxury boutique with polished displays and premium finishes",
+        "scene_tags": ["retail", "luxury"]
+      },
+      {
+        "key": "street_market",
+        "label": "street market",
+        "semantic_type": "commercial exterior",
+        "attributes": ["open stalls", "busy footpath", "informal retail environment"],
+        "description": "a street market with open stalls and busy foot traffic",
+        "scene_tags": ["market", "value"]
+      },
+      {
+        "key": "electronics_store",
+        "label": "electronics store",
+        "semantic_type": "commercial interior",
+        "attributes": ["device displays", "glowing screens", "modern retail layout"],
+        "description": "an electronics store with device displays and glowing screens",
+        "scene_tags": ["retail", "tech"]
+      }
+    ]
+  }
+}
